@@ -67,7 +67,7 @@ const ContactSection = () => {
             </div>
 
             <a
-              href="https://wa.me/918859303962"
+              href="https://wa.me/918859303962?text=Hello%20I%20want%20to%20book%20an%20appointment"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
