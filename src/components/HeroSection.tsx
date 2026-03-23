@@ -26,7 +26,7 @@ const HeroSection = () => {
                 <Phone size={18} /> Book Appointment
               </Button>
             </a>
-            <a href="https://wa.me/918859303962" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/918859303962?text=Hello%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 variant="outline"
