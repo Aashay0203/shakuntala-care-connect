@@ -1,50 +1,33 @@
-import { Phone, MessageCircle, Award, Star } from "lucide-react";
+import { MessageCircle, Clock, ExternalLink, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import doctorManmeet from "@/assets/doctor-manmeet.jpg";
-import doctorAmita from "@/assets/doctor-amita.jpg";
-import doctorAnand from "@/assets/doctor-anand.jpg";
-import doctorVinay from "@/assets/doctor-vinay.jpg";
-
-const WHATSAPP_LINK = "https://wa.me/918859303962?text=Hello%20I%20want%20to%20book%20an%20appointment";
+import { WHATSAPP_LINK, BOOK_NOW_LINK, DOCTORS_PAGE_LINK } from "@/lib/site";
 
 const doctors = [
-  {
-    name: "Dr. Manmeet Gupta",
-    qualification: "BAMS",
-    experience: "25+ years",
-    specialization: "General Healthcare",
-    image: doctorManmeet,
-    tags: ["Experienced", "Trusted Doctor"],
-    desc: "Providing holistic healthcare with decades of trusted experience in general medicine and patient wellness.",
-  },
-  {
-    name: "Dr. Amita Gupta",
-    qualification: "BAMS",
-    experience: "25+ years",
-    specialization: "Gynecology & Women Care",
-    image: doctorAmita,
-    tags: ["Women's Health Expert", "Trusted Doctor"],
-    desc: "Specialized in women's health, offering compassionate gynecology and maternity care for over two decades.",
-  },
-  {
-    name: "Dr. Anand Prakash Gupta",
-    qualification: "BAMS",
-    experience: "50+ years",
-    specialization: "General Healthcare",
-    image: doctorAnand,
-    tags: ["Senior Consultant", "Pioneer"],
-    desc: "A pioneer in healthcare with half a century of experience, guiding families through generations of care.",
-  },
-  {
-    name: "Dr. Vinay Sharma",
-    qualification: "MBBS + MS (Orthopedics)",
-    experience: "8+ years",
-    specialization: "Orthopedics & Bone Care",
-    image: doctorVinay,
-    tags: ["Orthopedic Specialist", "Skilled Surgeon"],
-    desc: "Expert orthopedic surgeon specializing in bone and joint care with modern treatment approaches.",
-  },
+  { name: "Dr. Abhinav Katyal", qualification: "MBBS, MD, DM", specialization: "Nephrology", timing: "11am – 1pm (1st & 3rd Tue)" },
+  { name: "Dr. Vinay Gangwar", qualification: "MBBS", specialization: "Orthopedics", timing: "12 – 3pm & 6 – 8pm" },
+  { name: "Dr. Paritosh Das Agarwal", qualification: "MBBS, MS", specialization: "Laparoscopic & General Surgery", timing: "12 – 3pm" },
+  { name: "Dr. Anubha Agarwal", qualification: "MBBS, MS", specialization: "Gynecology", timing: "11am – 3pm & 6 – 8pm" },
+  { name: "Dr. Anil Mishra", qualification: "MBBS, MD (Medicine)", specialization: "Physician", timing: "10am – 2pm & 6 – 8pm" },
+  { name: "Dr. Harshit Agarwal", qualification: "MS, MCh", specialization: "Neuro Surgery", timing: "3 – 4pm" },
+  { name: "Dr. Akash Gupta", qualification: "MBBS, MD", specialization: "Pediatrics", timing: "11am – 12:30pm / 1:30 – 3:30pm / 7 – 9:30pm" },
+  { name: "Dr. Saurabh Choubey", qualification: "MBBS, MS", specialization: "ENT", timing: "2 – 4pm (Wed off)" },
+  { name: "Dr. Vipul Kumar", qualification: "MS, MCh", specialization: "Plastic Surgery", timing: "On call" },
+  { name: "Dr. Ratnanjali Mishra", qualification: "MBBS, MS, MCh", specialization: "Plastic Surgery", timing: "On call" },
+  { name: "Dr. Nitin Kumar Gangwar", qualification: "MBBS, MS, MCh", specialization: "Nephrology & Urology", timing: "Timing not available" },
+  { name: "Dr. Jitendra Varshney", qualification: "MBBS, MD", specialization: "Anesthesia & Critical Care", timing: "Timing not available" },
+  { name: "Dr. Animesh Kumar", qualification: "MBBS, DNB", specialization: "Anesthesia & Critical Care", timing: "Timing not available" },
+  { name: "Dr. Pawan Goel", qualification: "MBBS, MD, DM", specialization: "Cardiology", timing: "3 – 5pm" },
+  { name: "Dr. Ajay Pal", qualification: "BPT, MPT (Ortho)", specialization: "Physiotherapy", timing: "10am – 3pm & 6 – 8pm" },
+  { name: "Dr. Anuradha Panday", qualification: "MBBS, DCP (Pathology)", specialization: "Pathologist", timing: "Timing not available" },
 ];
+
+const initials = (name: string) =>
+  name
+    .replace(/^Dr\.\s*/, "")
+    .split(" ")
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("");
 
 const DoctorsSection = () => {
   return (
@@ -53,83 +36,69 @@ const DoctorsSection = () => {
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-2">Our Doctors</p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Meet Our Experienced Team
+            Meet Our Specialist Team
           </h2>
-          <p className="text-muted-foreground">Dedicated professionals committed to your health and recovery.</p>
+          <p className="text-muted-foreground">
+            Experienced super specialists across every major department, available for you and your family.
+          </p>
         </div>
 
-        <div className="space-y-8">
-          {doctors.map((doc, index) => {
-            const isReversed = index % 2 !== 0;
-            return (
-              <div
-                key={doc.name}
-                className={`bg-card rounded-2xl border border-border/50 shadow-md overflow-hidden flex flex-col ${
-                  isReversed ? "md:flex-row-reverse" : "md:flex-row"
-                }`}
-              >
-                {/* Image */}
-                <div className="md:w-2/5 relative overflow-hidden">
-                  <img
-                    src={doc.image}
-                    alt={doc.name}
-                    loading="lazy"
-                    width={512}
-                    height={640}
-                    className="w-full h-64 md:h-full object-cover object-top"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 md:hidden">
-                    <h3 className="text-white font-bold text-lg">{doc.name}</h3>
-                  </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {doctors.map((doc) => (
+            <div
+              key={doc.name}
+              className="bg-card rounded-2xl border border-border/50 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <span className="font-display font-bold text-primary text-lg">{initials(doc.name)}</span>
                 </div>
-
-                {/* Content */}
-                <div className="md:w-3/5 p-6 sm:p-8 flex flex-col justify-center">
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {doc.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold"
-                      >
-                        <Star size={12} /> {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <h3 className="hidden md:block font-display text-2xl font-bold text-foreground mb-1">
-                    {doc.name}
-                  </h3>
-                  <p className="text-primary font-semibold text-sm mb-1">{doc.qualification}</p>
-                  <p className="text-muted-foreground text-sm mb-3">{doc.specialization}</p>
-
-                  <div className="inline-flex items-center gap-2 bg-accent rounded-lg px-4 py-2 mb-4 w-fit">
-                    <Award className="text-primary" size={18} />
-                    <span className="font-semibold text-accent-foreground text-sm">
-                      {doc.experience} Experience
-                    </span>
-                  </div>
-
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-5">{doc.desc}</p>
-
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a href="#contact">
-                      <Button className="rounded-full gap-2 shadow-md shadow-primary/20">
-                        <Phone size={16} /> Book Appointment
-                      </Button>
-                    </a>
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                      <Button
-                        variant="outline"
-                        className="rounded-full gap-2 border-green-500/30 text-green-700 hover:bg-green-50"
-                      >
-                        <MessageCircle size={16} /> Chat on WhatsApp
-                      </Button>
-                    </a>
-                  </div>
+                <div className="min-w-0">
+                  <h3 className="font-display text-lg font-bold text-foreground leading-tight">{doc.name}</h3>
+                  <p className="text-primary font-semibold text-xs mt-0.5">{doc.qualification}</p>
                 </div>
               </div>
-            );
-          })}
+
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold w-fit mb-3">
+                <Stethoscope size={12} /> {doc.specialization}
+              </span>
+
+              <div className="flex items-start gap-2 text-muted-foreground text-sm mb-5">
+                <Clock size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                <span>{doc.timing}</span>
+              </div>
+
+              <div className="mt-auto space-y-3">
+                <a
+                  href={DOCTORS_PAGE_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                >
+                  View Profile <ExternalLink size={14} />
+                </a>
+                <div className="flex gap-3">
+                  <a href={BOOK_NOW_LINK} target="_blank" rel="noopener noreferrer" className="flex-1">
+                    <Button className="w-full rounded-full shadow-md shadow-primary/20">Book Now</Button>
+                  </a>
+                  <a
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Chat on WhatsApp about ${doc.name}`}
+                  >
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full border-green-500/30 text-green-700 hover:bg-green-50"
+                    >
+                      <MessageCircle size={18} />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

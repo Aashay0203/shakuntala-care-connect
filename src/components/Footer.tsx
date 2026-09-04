@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import { HOSPITAL_NAME, HOSPITAL_ADDRESS, PHONE_PRIMARY, PHONE_SECONDARY, EMAIL } from "@/lib/site";
 
 const Footer = () => {
   return (
@@ -6,9 +7,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           <div>
-            <h3 className="font-display text-xl font-bold text-background mb-3">Shakuntala Hospital</h3>
+            <h3 className="font-display text-xl font-bold text-background mb-3">Dev Primus Hospital</h3>
             <p className="text-sm leading-relaxed text-background/60">
-              Trusted healthcare for your entire family. Serving Bilsanda with compassion and expertise for over 50 years.
+              Multi super speciality hospital & trauma center in Bareilly — advanced care, expert specialists, and 24×7 emergency support.
             </p>
           </div>
           <div>
@@ -26,15 +27,15 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-background mb-3">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>📞 8859303962</li>
-              <li>📧 shakuntalahospital79@gmail.com</li>
-              <li>📍 Main Road, Ward No. 8, Bilsanda, UP 262202</li>
+              <li>📞 {PHONE_PRIMARY}, {PHONE_SECONDARY}</li>
+              <li>📧 {EMAIL}</li>
+              <li>📍 {HOSPITAL_ADDRESS}</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-background/10 pt-6 text-center text-sm text-background/50">
-          <p className="flex items-center justify-center gap-1">
-            © {new Date().getFullYear()} Shakuntala Hospital. Made with <Heart size={14} className="text-primary" /> for better healthcare.
+          <p className="flex items-center justify-center gap-1 flex-wrap">
+            © {new Date().getFullYear()} {HOSPITAL_NAME}. Made with <Heart size={14} className="text-primary" /> for better healthcare.
           </p>
         </div>
       </div>

@@ -1,20 +1,21 @@
 import {
-  Baby, Stethoscope, Building2, HeartPulse, Scan,
-  Pill, FlaskConical, Ribbon, Flower2, SmilePlus, Bone,
+  Baby, Stethoscope, Ambulance, HeartPulse, Brain,
+  Scissors, FlaskConical, Ear, Droplet, Activity, Bone, Syringe,
 } from "lucide-react";
 
 const services = [
-  { icon: Baby, label: "Maternity Care" },
-  { icon: Stethoscope, label: "General Consultation" },
-  { icon: Building2, label: "Indoor OPD Services" },
-  { icon: HeartPulse, label: "ECG" },
-  { icon: Scan, label: "X-Ray" },
-  { icon: Pill, label: "Medicines Availability" },
-  { icon: FlaskConical, label: "Laboratory Tests" },
-  { icon: Ribbon, label: "Gynecology Services" },
-  { icon: Flower2, label: "Infertility Treatment" },
-  { icon: SmilePlus, label: "Child Healthcare" },
-  { icon: Bone, label: "Orthopedic Care" },
+  { icon: Ambulance, label: "Trauma & Emergency" },
+  { icon: HeartPulse, label: "Cardiology" },
+  { icon: Brain, label: "Neuro Surgery" },
+  { icon: Bone, label: "Orthopedics" },
+  { icon: Scissors, label: "Laparoscopic & General Surgery" },
+  { icon: Baby, label: "Gynecology & Maternity" },
+  { icon: Stethoscope, label: "General Medicine" },
+  { icon: Droplet, label: "Nephrology & Urology" },
+  { icon: Ear, label: "ENT Care" },
+  { icon: Syringe, label: "Plastic Surgery" },
+  { icon: Activity, label: "Physiotherapy" },
+  { icon: FlaskConical, label: "Pathology & Lab Tests" },
 ];
 
 const ServicesSection = () => {
@@ -26,7 +27,7 @@ const ServicesSection = () => {
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Complete Healthcare Under One Roof
           </h2>
-          <p className="text-muted-foreground">From routine check-ups to specialized treatments, we've got you covered.</p>
+          <p className="text-muted-foreground">From emergency trauma care to super speciality treatments, we've got you covered.</p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">

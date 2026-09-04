@@ -2,8 +2,8 @@ import { Heart, Shield, Users } from "lucide-react";
 
 const features = [
   { icon: Heart, title: "Compassionate Care", desc: "We treat every patient like family, with warmth and genuine concern for your well-being." },
-  { icon: Shield, title: "Trusted Experience", desc: "With over 50 years of combined medical experience, you are in safe and experienced hands." },
-  { icon: Users, title: "Care for Everyone", desc: "From newborns to elders — we provide complete healthcare for women, men, and children." },
+  { icon: Shield, title: "Trauma & Emergency Ready", desc: "A dedicated trauma center with critical care support available round the clock." },
+  { icon: Users, title: "Super Speciality Team", desc: "Cardiology, neuro surgery, nephrology, orthopedics, gynecology, pediatrics and more under one roof." },
 ];
 
 const AboutSection = () => {
@@ -16,7 +16,7 @@ const AboutSection = () => {
             Your Family's Health, Our Commitment
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Shakuntala Hospital has been a trusted name in Bilsanda for decades. We believe in making quality healthcare accessible, affordable, and friendly for every member of your family.
+            Dev Primus Multi Super Speciality Hospital & Trauma Center on Pilibhit Bypass Road, Bareilly, brings advanced treatment, experienced specialists and modern facilities together — making quality healthcare accessible and friendly for every member of your family.
           </p>
         </div>
 

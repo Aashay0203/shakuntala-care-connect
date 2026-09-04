@@ -1,10 +1,10 @@
 import { Star } from "lucide-react";
 
 const testimonials = [
-  { name: "Priya Sharma", feedback: "The doctors at Shakuntala Hospital are incredibly caring. Dr. Amita Gupta helped me through my pregnancy with so much patience and support. I highly recommend this hospital." },
-  { name: "Rajesh Kumar", feedback: "I had a knee injury and Dr. Vinay Sharma treated me so well. The staff is friendly and the clinic is very clean. Truly a trustworthy hospital in Bilsanda." },
-  { name: "Sunita Devi", feedback: "We've been coming here for years. Dr. Anand Prakash Gupta has been our family doctor forever. The care and attention they give is unmatched." },
-  { name: "Amit Verma", feedback: "Dr. Manmeet Gupta diagnosed my problem quickly and the treatment worked perfectly. Very affordable and excellent service. Thank you Shakuntala Hospital!" },
+  { name: "Priya Sharma", feedback: "The gynecology team took wonderful care of me through my pregnancy. The hospital is clean, modern and the staff is very patient." },
+  { name: "Rajesh Kumar", feedback: "I came in after a road accident and the trauma team responded immediately. Excellent orthopedic care and quick recovery." },
+  { name: "Sunita Devi", feedback: "Consulted the physician for my father's treatment. Everything from tests to medicines was available under one roof." },
+  { name: "Amit Verma", feedback: "The pediatrician was so gentle with my son. Booking was simple and the whole visit was smooth and affordable." },
 ];
 
 const TestimonialsSection = () => {
