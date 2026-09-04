@@ -1,6 +1,7 @@
 import { Phone, MessageCircle, Star, HeartPulse } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroDoctor from "@/assets/hero-doctor.jpg";
+import { WHATSAPP_LINK, BOOK_NOW_LINK } from "@/lib/site";
 
 const HeroSection = () => {
   return (
@@ -14,22 +15,22 @@ const HeroSection = () => {
           {/* Left: Content */}
           <div className="max-w-2xl">
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              🏥 Welcome to Shakuntala Hospital
+              🏥 Welcome to Dev Primus Hospital
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Trusted Care for{" "}
-              <span className="text-primary">Every Stage</span> of Life
+              Multi Super Speciality Care in{" "}
+              <span className="text-primary">Bareilly</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              At Shakuntala Hospital, we provide compassionate and affordable healthcare for your entire family — women, men, and children. Your health is our priority.
+              Dev Primus Multi Super Speciality Hospital & Trauma Center brings together expert specialists, advanced facilities and round-the-clock emergency care for your entire family.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#contact">
+              <a href={BOOK_NOW_LINK} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="rounded-full gap-2 text-base px-8 shadow-lg shadow-primary/25">
-                  <Phone size={18} /> Book Appointment
+                  <Phone size={18} /> Book Now
                 </Button>
               </a>
-              <a href="https://wa.me/918859303962?text=Hello%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   variant="outline"
@@ -46,7 +47,7 @@ const HeroSection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 aspect-[4/5]">
               <img
                 src={heroDoctor}
-                alt="Friendly professional doctor at Shakuntala Hospital"
+                alt="Friendly professional doctor at Dev Primus Hospital"
                 width={896}
                 height={1024}
                 className="w-full h-full object-cover"
@@ -80,7 +81,7 @@ const HeroSection = () => {
 
             {/* Floating WhatsApp button */}
             <a
-              href="https://wa.me/918859303962?text=Hello%20I%20want%20to%20book%20an%20appointment"
+              href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="absolute -bottom-16 right-0 sm:right-4"

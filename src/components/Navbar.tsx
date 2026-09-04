@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BOOK_NOW_LINK } from "@/lib/site";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -28,7 +29,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <a href="#" className="flex items-center gap-2">
-          <span className="text-2xl font-display font-bold text-primary">Shakuntala</span>
+          <span className="text-2xl font-display font-bold text-primary">Dev Primus</span>
           <span className="text-sm font-medium text-muted-foreground hidden sm:inline">Hospital</span>
         </a>
 
@@ -43,9 +44,9 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a href="#contact">
+          <a href={BOOK_NOW_LINK} target="_blank" rel="noopener noreferrer">
             <Button size="sm" className="rounded-full gap-2">
-              <Phone size={14} /> Book Appointment
+              <Phone size={14} /> Book Now
             </Button>
           </a>
         </div>
@@ -69,9 +70,9 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a href="#contact" onClick={() => setIsOpen(false)}>
+          <a href={BOOK_NOW_LINK} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
             <Button size="sm" className="w-full rounded-full gap-2">
-              <Phone size={14} /> Book Appointment
+              <Phone size={14} /> Book Now
             </Button>
           </a>
         </div>
