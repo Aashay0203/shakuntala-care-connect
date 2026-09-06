@@ -13,7 +13,7 @@ const doctors = [
   { name: "Dr. Saurabh Choubey", qualification: "MBBS, MS", specialization: "ENT", timing: "2 – 4pm (Wed off)" },
   { name: "Dr. Vipul Kumar", qualification: "MS, MCh", specialization: "Plastic Surgery", timing: "On call" },
   { name: "Dr. Ratnanjali Mishra", qualification: "MBBS, MS, MCh", specialization: "Plastic Surgery", timing: "On call" },
-  { name: "Dr. Nitin Kumar Gangwar", qualification: "MBBS, MS, MCh", specialization: "Nephrology & Urology", timing: "Timing not available" },
+  { name: "Dr. Nitin Kumar Gangwar", qualification: "MBBS, MS, MCh", specialization: "Nephrology & Urology", timing: "10am - 3pm" },
   { name: "Dr. Jitendra Varshney", qualification: "MBBS, MD", specialization: "Anesthesia & Critical Care", timing: "Timing not available" },
   { name: "Dr. Animesh Kumar", qualification: "MBBS, DNB", specialization: "Anesthesia & Critical Care", timing: "Timing not available" },
   { name: "Dr. Pawan Goel", qualification: "MBBS, MD, DM", specialization: "Cardiology", timing: "3 – 5pm" },
