@@ -18,7 +18,7 @@ const doctors = [
   { name: "Dr. Animesh Kumar", qualification: "MBBS, DNB", specialization: "Anesthesia & Critical Care", timing: "Timing not available" },
   { name: "Dr. Pawan Goel", qualification: "MBBS, MD, DM", specialization: "Cardiology", timing: "3 – 5pm" },
   { name: "Dr. Ajay Pal", qualification: "BPT, MPT (Ortho)", specialization: "Physiotherapy", timing: "10am – 3pm & 6 – 8pm" },
-  { name: "Dr. Anuradha Panday", qualification: "MBBS, DCP (Pathology)", specialization: "Pathologist", timing: "Timing not available" },
+  { name: "Dr. Anuradha Panday", qualification: "MBBS, DCP (Pathology)", specialization: "Pathologist", timing: "11am - 3pm & 6pm - 8pm " },
 ];
 
 const initials = (name: string) =>
