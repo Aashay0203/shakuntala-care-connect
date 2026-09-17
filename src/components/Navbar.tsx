@@ -29,8 +29,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <a href="#" className="flex items-center gap-2">
-          <span className="text-2xl font-display font-bold text-primary">Dev Primus</span>
-          <span className="text-sm font-medium text-muted-foreground hidden sm:inline">Hospital</span>
+          <span className="text-2xl font-display font-bold text-primary">Swastik</span>
+          <span className="text-sm font-medium text-muted-foreground hidden sm:inline">Medical Centre</span>
         </a>
 
         {/* Desktop links */}

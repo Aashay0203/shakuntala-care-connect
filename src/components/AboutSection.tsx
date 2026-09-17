@@ -1,9 +1,14 @@
 import { Heart, Shield, Users } from "lucide-react";
+import { VISION, MISSION } from "@/lib/site";
 
 const features = [
-  { icon: Heart, title: "Compassionate Care", desc: "We treat every patient like family, with warmth and genuine concern for your well-being." },
-  { icon: Shield, title: "Trauma & Emergency Ready", desc: "A dedicated trauma center with critical care support available round the clock." },
-  { icon: Users, title: "Super Speciality Team", desc: "Cardiology, neuro surgery, nephrology, orthopedics, gynecology, pediatrics and more under one roof." },
+  { icon: Heart, title: "Our Vision", desc: VISION },
+  { icon: Shield, title: "Our Mission", desc: MISSION },
+  {
+    icon: Users,
+    title: "Specialist Team",
+    desc: "Physician, neurologist, psychiatrist, psychologist and diet & lifestyle consultant — all under one roof.",
+  },
 ];
 
 const AboutSection = () => {
@@ -16,7 +21,9 @@ const AboutSection = () => {
             Your Family's Health, Our Commitment
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Dev Primus Multi Super Speciality Hospital & Trauma Center on Pilibhit Bypass Road, Bareilly, brings advanced treatment, experienced specialists and modern facilities together — making quality healthcare accessible and friendly for every member of your family.
+            Swastik Medical Centre in Sector 10, Vasundhara, Ghaziabad offers expert consultations, neuro-diagnostic
+            tests, pathology and day-care facilities in a clean, comfortable and friendly setting for every member of
+            your family.
           </p>
         </div>
 

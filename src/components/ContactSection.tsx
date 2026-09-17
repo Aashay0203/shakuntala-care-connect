@@ -1,12 +1,12 @@
-import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   HOSPITAL_NAME,
   HOSPITAL_ADDRESS,
   PHONE_PRIMARY,
-  PHONE_SECONDARY,
-  EMAIL,
+  PHONE_TEL,
   WHATSAPP_LINK,
+  MAP_EMBED_SRC,
 } from "@/lib/site";
 
 const ContactSection = () => {
@@ -18,14 +18,14 @@ const ContactSection = () => {
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Get in Touch
           </h2>
-          <p className="text-muted-foreground">We're here to help. Reach out to us anytime.</p>
+          <p className="text-muted-foreground">Call or WhatsApp us at {PHONE_PRIMARY} — we're happy to help.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Map */}
           <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm h-[350px]">
             <iframe
-              src="https://www.google.com/maps?q=Dev%20Primus%20Hospital%20Pilibhit%20Bypass%20Road%20Bareilly&output=embed"
+              src={MAP_EMBED_SRC}
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -50,33 +50,26 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              <a href={`tel:${PHONE_PRIMARY}`} className="block">
-                <Button variant="outline" className="w-full rounded-xl h-14 gap-3 border-primary/20 hover:bg-primary/5">
-                  <Phone className="text-primary" size={18} />
-                  <div className="text-left">
-                    <p className="text-xs text-muted-foreground">Call Us</p>
-                    <p className="text-sm font-medium text-foreground">{PHONE_PRIMARY}</p>
-                  </div>
-                </Button>
-              </a>
-              <a href={`tel:${PHONE_SECONDARY}`} className="block">
-                <Button variant="outline" className="w-full rounded-xl h-14 gap-3 border-primary/20 hover:bg-primary/5">
-                  <Phone className="text-primary" size={18} />
-                  <div className="text-left">
-                    <p className="text-xs text-muted-foreground">Alternate</p>
-                    <p className="text-sm font-medium text-foreground">{PHONE_SECONDARY}</p>
-                  </div>
-                </Button>
-              </a>
+            <div className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="text-primary" size={20} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Working Hours</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Monday – Saturday: 9:00 AM – 8:00 PM<br />Sunday: 10:00 AM – 12:00 PM
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <a href={`mailto:${EMAIL}`} className="block">
+            <a href={PHONE_TEL} className="block">
               <Button variant="outline" className="w-full rounded-xl h-14 gap-3 border-primary/20 hover:bg-primary/5">
-                <Mail className="text-primary" size={18} />
+                <Phone className="text-primary" size={18} />
                 <div className="text-left">
-                  <p className="text-xs text-muted-foreground">Email</p>
-                  <p className="text-sm font-medium text-foreground truncate">{EMAIL}</p>
+                  <p className="text-xs text-muted-foreground">Call Us</p>
+                  <p className="text-sm font-medium text-foreground">{PHONE_PRIMARY}</p>
                 </div>
               </Button>
             </a>

@@ -8,19 +8,19 @@ const TimingSection = () => {
           <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
             <Clock className="text-primary" size={28} />
           </div>
-          <h2 className="font-display text-2xl font-bold text-foreground mb-6">Hospital Timings</h2>
+          <h2 className="font-display text-2xl font-bold text-foreground mb-6">Clinic Timings</h2>
           <div className="space-y-4">
             <div className="flex justify-between items-center py-3 border-b border-border/50">
-              <span className="font-medium text-foreground">OPD (Mon – Sat)</span>
-              <span className="text-primary font-semibold">10:00 AM – 8:00 PM</span>
+              <span className="font-medium text-foreground">Monday – Saturday</span>
+              <span className="text-primary font-semibold">9:00 AM – 8:00 PM</span>
             </div>
             <div className="flex justify-between items-center py-3 border-b border-border/50">
-              <span className="font-medium text-foreground">OPD (Sunday)</span>
-              <span className="text-primary font-semibold">10:00 AM – 2:00 PM</span>
+              <span className="font-medium text-foreground">Sunday</span>
+              <span className="text-primary font-semibold">10:00 AM – 12:00 PM</span>
             </div>
             <div className="flex justify-between items-center py-3">
-              <span className="font-medium text-foreground">Emergency & Trauma</span>
-              <span className="text-primary font-semibold">Open 24×7</span>
+              <span className="font-medium text-foreground">Day Care & Nebulization</span>
+              <span className="text-primary font-semibold">During clinic hours</span>
             </div>
           </div>
           <p className="text-muted-foreground text-xs mt-6">

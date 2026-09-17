@@ -1,28 +1,37 @@
-import { MessageCircle, Clock, ExternalLink, Stethoscope } from "lucide-react";
+import { MessageCircle, Clock, IndianRupee, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_LINK, BOOK_NOW_LINK, DOCTORS_PAGE_LINK } from "@/lib/site";
+import { WHATSAPP_LINK, BOOK_NOW_LINK } from "@/lib/site";
 
 const doctors = [
-  { name: "Dr. Abhinav Katyal", qualification: "MBBS, MD, DM", specialization: "Nephrology", timing: "11am – 1pm (1st & 3rd Tue)" },
-  { name: "Dr. Vinay Gangwar", qualification: "MBBS", specialization: "Orthopedics", timing: "12 – 3pm & 6 – 8pm" },
-  { name: "Dr. Paritosh Das Agarwal", qualification: "MBBS, MS", specialization: "Laparoscopic & General Surgery", timing: "12 – 3pm" },
-  { name: "Dr. Anubha Agarwal", qualification: "MBBS, MS", specialization: "Gynecology", timing: "11am – 3pm & 6 – 8pm" },
-  { name: "Dr. Anil Mishra", qualification: "MBBS, MD (Medicine)", specialization: "Physician", timing: "10am – 2pm & 6 – 8pm" },
-  { name: "Dr. Harshit Agarwal", qualification: "MS, MCh", specialization: "Neuro Surgery", timing: "3 – 4pm" },
-  { name: "Dr. Akash Gupta", qualification: "MBBS, MD", specialization: "Pediatrics", timing: "11am – 12:30pm / 1:30 – 3:30pm / 7 – 9:30pm" },
-  { name: "Dr. Saurabh Choubey", qualification: "MBBS, MS", specialization: "ENT", timing: "2 – 4pm (Wed off)" },
-  { name: "Dr. Vipul Kumar", qualification: "MS, MCh", specialization: "Plastic Surgery", timing: "On call" },
-  { name: "Dr. Ratnanjali Mishra", qualification: "MBBS, MS, MCh", specialization: "Plastic Surgery", timing: "On call" },
-  { name: "Dr. Nitin Kumar Gangwar", qualification: "MBBS, MS, MCh", specialization: "Nephrology & Urology", timing: "10am - 3pm" },
-  { name: "Dr. Jitendra Varshney", qualification: "MBBS, MD", specialization: "Anesthesia & Critical Care", timing: "Timing not available" },
-  { name: "Dr. Animesh Kumar", qualification: "MBBS, DNB", specialization: "Anesthesia & Critical Care", timing: "Timing not available" },
-  { name: "Dr. Pawan Goel", qualification: "MBBS, MD, DM", specialization: "Cardiology", timing: "3 – 5pm" },
-  { name: "Dr. Ajay Pal", qualification: "BPT, MPT (Ortho)", specialization: "Physiotherapy", timing: "10am – 3pm & 6 – 8pm" }
+  {
+    name: "Dr. Priya Gupta",
+    qualification: "MBBS, MD (Medicine), DM Neurology (AIIMS, Gold Medalist)",
+    specialization: "Senior Consultant Neurologist",
+    experience:
+      "Formerly at G.B. Pant Hospital (MAMC) New Delhi, AIIMS and Max Hospital Vaishali (Pushpanjali Crosslay Hospital)",
+    timing: "Mon – Sat, 10:00 AM – 12:30 PM",
+    fee: "₹1100",
+  },
+  {
+    name: "Dr. Rahul Gupta",
+    qualification: "MBBS (KGMU, Lucknow), MD (Medicine)",
+    specialization: "Senior Consultant Physician",
+    experience:
+      "Formerly at G.B. Pant Hospital (MAMC) New Delhi, Narender Mohan Heart Centre Ghaziabad, NDMC Hospital New Delhi and Max Hospital New Delhi",
+    timing: "Mon – Sat, 10:00 AM – 1:00 PM & 6:00 PM – 8:00 PM · Sunday, 10:00 AM – 12:00 PM",
+    fee: "₹700",
+  },
+];
+
+const consultants = [
+  { name: "Dr. Sachin Sharma", specialization: "Psychiatrist" },
+  { name: "Ms. Anjum Gupta", specialization: "Dietician" },
+  { name: "Ms. Palak Maheshwari", specialization: "Psychologist" },
 ];
 
 const initials = (name: string) =>
   name
-    .replace(/^Dr\.\s*/, "")
+    .replace(/^(Dr\.|Ms\.)\s*/, "")
     .split(" ")
     .slice(0, 2)
     .map((w) => w[0])
@@ -38,11 +47,11 @@ const DoctorsSection = () => {
             Meet Our Specialist Team
           </h2>
           <p className="text-muted-foreground">
-            Experienced super specialists across every major department, available for you and your family.
+            Experienced consultants for you and your family, with clear OPD timings and fees.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           {doctors.map((doc) => (
             <div
               key={doc.name}
@@ -62,20 +71,19 @@ const DoctorsSection = () => {
                 <Stethoscope size={12} /> {doc.specialization}
               </span>
 
-              <div className="flex items-start gap-2 text-muted-foreground text-sm mb-5">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">{doc.experience}</p>
+
+              <div className="flex items-start gap-2 text-muted-foreground text-sm mb-2">
                 <Clock size={16} className="text-primary flex-shrink-0 mt-0.5" />
                 <span>{doc.timing}</span>
               </div>
 
-              <div className="mt-auto space-y-3">
-                <a
-                  href={DOCTORS_PAGE_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-                >
-                  View Profile <ExternalLink size={14} />
-                </a>
+              <div className="flex items-start gap-2 text-muted-foreground text-sm mb-5">
+                <IndianRupee size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                <span>Consultation fee {doc.fee}</span>
+              </div>
+
+              <div className="mt-auto">
                 <div className="flex gap-3">
                   <a href={BOOK_NOW_LINK} target="_blank" rel="noopener noreferrer" className="flex-1">
                     <Button className="w-full rounded-full shadow-md shadow-primary/20">Book Now</Button>
@@ -98,6 +106,28 @@ const DoctorsSection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10">
+          <h3 className="font-display text-xl font-bold text-foreground text-center mb-6">
+            Visiting Consultants
+          </h3>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {consultants.map((c) => (
+              <div
+                key={c.name}
+                className="bg-card rounded-2xl border border-border/50 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 p-6 flex items-center gap-4"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <span className="font-display font-bold text-primary">{initials(c.name)}</span>
+                </div>
+                <div className="min-w-0">
+                  <h4 className="font-semibold text-foreground leading-tight">{c.name}</h4>
+                  <p className="text-primary text-xs font-semibold mt-0.5">{c.specialization}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

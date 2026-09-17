@@ -15,14 +15,15 @@ const HeroSection = () => {
           {/* Left: Content */}
           <div className="max-w-2xl">
             <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              🏥 Welcome to Dev Primus Hospital
+              🏥 Welcome to Swastik Medical Centre
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Multi Super Speciality Care in{" "}
-              <span className="text-primary">Bareilly</span>
+              Comprehensive Medical Care in{" "}
+              <span className="text-primary">Vasundhara, Ghaziabad</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              Dev Primus Multi Super Speciality Hospital & Trauma Center brings together expert specialists, advanced facilities and round-the-clock emergency care for your entire family.
+              Physician, Neurologist, Psychiatrist, Psychologist and Diet & Lifestyle Consultant — expert consultations,
+              neuro-diagnostic tests and pathology, all in one comfortable clinic.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={BOOK_NOW_LINK} target="_blank" rel="noopener noreferrer">
@@ -47,7 +48,7 @@ const HeroSection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 aspect-[4/5]">
               <img
                 src={heroDoctor}
-                alt="Friendly professional doctor at Dev Primus Hospital"
+                alt="Friendly professional doctor at Swastik Medical Centre"
                 width={896}
                 height={1024}
                 className="w-full h-full object-cover"
@@ -65,7 +66,7 @@ const HeroSection = () => {
                 <Star className="fill-primary text-primary" size={28} />
                 <div>
                   <p className="font-display font-bold text-2xl text-foreground leading-none">4.9</p>
-                  <p className="text-xs text-muted-foreground mt-1">Patient Rating</p>
+                  <p className="text-xs text-muted-foreground mt-1">Google Rating</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -73,7 +74,7 @@ const HeroSection = () => {
                   <HeartPulse className="text-primary" size={18} />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm text-foreground leading-none">500+</p>
+                  <p className="font-semibold text-sm text-foreground leading-none">249+</p>
                   <p className="text-xs text-muted-foreground mt-1">Reviews</p>
                 </div>
               </div>

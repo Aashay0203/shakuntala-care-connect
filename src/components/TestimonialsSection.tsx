@@ -1,10 +1,10 @@
 import { Star } from "lucide-react";
 
 const testimonials = [
-  { name: "Priya Sharma", feedback: "The gynecology team took wonderful care of me through my pregnancy. The hospital is clean, modern and the staff is very patient." },
-  { name: "Rajesh Kumar", feedback: "I came in after a road accident and the trauma team responded immediately. Excellent orthopedic care and quick recovery." },
-  { name: "Sunita Devi", feedback: "Consulted the physician for my father's treatment. Everything from tests to medicines was available under one roof." },
-  { name: "Amit Verma", feedback: "The pediatrician was so gentle with my son. Booking was simple and the whole visit was smooth and affordable." },
+  { name: "Verified Patient", feedback: "The doctor listened patiently and explained everything clearly. I never felt rushed." },
+  { name: "Verified Patient", feedback: "The clinic is spotless and well maintained, and the waiting time was very short." },
+  { name: "Verified Patient", feedback: "The staff is friendly and helpful, right from the reception to the tests." },
+  { name: "Verified Patient", feedback: "Tests and consultation were done in one visit. Very convenient and reassuring." },
 ];
 
 const TestimonialsSection = () => {
@@ -19,14 +19,14 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {testimonials.map((t) => (
+          {testimonials.map((t, i) => (
             <div
-              key={t.name}
+              key={i}
               className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="flex gap-1 mb-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-primary text-primary" />
+                {[...Array(5)].map((_, j) => (
+                  <Star key={j} size={16} className="fill-primary text-primary" />
                 ))}
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-4">"{t.feedback}"</p>

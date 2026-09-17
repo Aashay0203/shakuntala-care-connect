@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Award, Users, CheckCircle } from "lucide-react";
+import { Award, Star, CheckCircle } from "lucide-react";
 
 const stats = [
-  { icon: Award, value: 50, suffix: "+", label: "Years of Experience" },
-  { icon: Users, value: 20000, suffix: "+", label: "Patients Treated" },
-  { icon: CheckCircle, value: 20000, suffix: "+", label: "Successful Treatments" },
+  { icon: Award, value: 15, suffix: "+", label: "Years of Clinical Experience" },
+  { icon: Star, value: 249, suffix: "+", label: "Google Reviews (4.9 Stars)" },
+  { icon: CheckCircle, value: 14, suffix: "", label: "Specialities Available" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
