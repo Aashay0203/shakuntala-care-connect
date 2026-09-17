@@ -1,5 +1,5 @@
 import { Heart } from "lucide-react";
-import { HOSPITAL_NAME, HOSPITAL_ADDRESS, PHONE_PRIMARY, PHONE_SECONDARY, EMAIL } from "@/lib/site";
+import { HOSPITAL_NAME, HOSPITAL_ADDRESS, PHONE_PRIMARY } from "@/lib/site";
 
 const Footer = () => {
   return (
@@ -7,9 +7,10 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           <div>
-            <h3 className="font-display text-xl font-bold text-background mb-3">Dev Primus Hospital</h3>
+            <h3 className="font-display text-xl font-bold text-background mb-3">Swastik Medical Centre</h3>
             <p className="text-sm leading-relaxed text-background/60">
-              Multi super speciality hospital & trauma center in Bareilly — advanced care, expert specialists, and 24×7 emergency support.
+              Comprehensive medical care in Vasundhara, Ghaziabad — physician, neurologist, psychiatrist, psychologist
+              and diet & lifestyle consultant.
             </p>
           </div>
           <div>
@@ -27,8 +28,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-background mb-3">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>📞 {PHONE_PRIMARY}, {PHONE_SECONDARY}</li>
-              <li>📧 {EMAIL}</li>
+              <li>📞 {PHONE_PRIMARY}</li>
               <li>📍 {HOSPITAL_ADDRESS}</li>
             </ul>
           </div>
